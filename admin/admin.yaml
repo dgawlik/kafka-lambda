@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: admin
+  labels:
+    name: admin
+    type: client
+spec:
+  containers:
+    - name: admin-container
+      image: admin:1.0
+      imagePullPolicy: Never
+      env:
+        - name: KAFKA_BOOTSTRAP_URL
+          value: "kafka-broker-svc:9092"
+        - name: MONGO_URL
+          value: "mongo-svc:27017"
+        - name: MONGO_USERNAME
+          value: "root"
+        - name: MONGO_PASSWORD
+          value: "passwd"

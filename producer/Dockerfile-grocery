@@ -1,0 +1,9 @@
+FROM electronics:1.0
+
+WORKDIR /app
+
+COPY template-grocery.json .
+
+RUN mvn package spring-boot:repackage
+
+CMD java -jar target/producer-1.0-SNAPSHOT.jar template-grocery.json

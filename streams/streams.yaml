@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: streams
+  labels:
+    name: streams
+    type: streams
+spec:
+  containers:
+    - name: streams-container
+      image: streams:1.0
+      imagePullPolicy: Never
+      env:
+        - name: STREAMS_BOOTSTRAP_URL
+          value: "kafka-broker-svc:9092"
+        - name: MONGO_URL
+          value: "mongo-svc:27017"
+        - name: MONGO_USERNAME
+          value: "root"
+        - name: MONGO_PASSWORD
+          value: "passwd"
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongo
+  labels:
+    name: mongo
+    type: streams
+spec:
+  containers:
+    - name: mongo-container
+      image: mongo
+      env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: "root"
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: "passwd"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-svc
+spec:
+  clusterIP: None
+  selector:
+    name: mongo
+    type: streams
+  ports:
+    - protocol: TCP
+      port: 27017

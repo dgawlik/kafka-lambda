@@ -1,0 +1,33 @@
+{
+  "name": "electronics",
+  "inventory": [
+    {
+      "name": "lenovo e470",
+      "quantityMin": 1,
+      "quantityMax": 10,
+      "intervalSeconds": 3,
+      "price": 2000
+    },
+    {
+      "name": "macbook air",
+      "quantityMin": 2,
+      "quantityMax": 7,
+      "intervalSeconds": 10,
+      "price": 4000
+    },
+    {
+      "name": "logitech m185",
+      "quantityMin": 1,
+      "quantityMax": 3,
+      "intervalSeconds": 2,
+      "price": 50
+    },
+    {
+      "name": "sandisk 16GB",
+      "quantityMin": 1,
+      "quantityMax": 4,
+      "intervalSeconds": 5,
+      "price": 20
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "grocery",
+  "inventory": [
+    {
+      "name": "apples/kg",
+      "quantityMin": 1,
+      "quantityMax": 5,
+      "intervalSeconds": 3,
+      "price": 3
+    },
+    {
+      "name": "bananas/kg",
+      "quantityMin": 2,
+      "quantityMax": 20,
+      "intervalSeconds": 10,
+      "price": 6
+    },
+    {
+      "name": "oranges/kg",
+      "quantityMin": 4,
+      "quantityMax": 6,
+      "intervalSeconds": 2,
+      "price": 4
+    },
+    {
+      "name": "grapes/kg",
+      "quantityMin": 1,
+      "quantityMax": 4,
+      "intervalSeconds": 5,
+      "price": 5
+    }
+  ]
+}

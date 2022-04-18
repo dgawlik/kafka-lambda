@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: p-electronics
+  labels:
+    name: p-electronics
+    type: producer
+spec:
+  containers:
+    - name: electronics-container
+      image: electronics:1.0
+      imagePullPolicy: Never
+      env:
+        - name: PRODUCER_BOOTSTRAP_URL
+          value: "kafka-broker-svc:9092"
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: p-grocery
+  labels:
+    name: p-grocery
+    type: producer
+spec:
+  containers:
+    - name: grocery-container
+      image: grocery:1.0
+      imagePullPolicy: Never
+      env:
+        - name: PRODUCER_BOOTSTRAP_URL
+          value: "kafka-broker-svc:9092"
